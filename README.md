@@ -7,4 +7,3 @@
 # BackEnd
 [link to backend github](https://github.com/smmyl/ecommerce-backend)
 # Difficulties
- We wanted to get the Login authorization set up but we were not able to. Display is just to '#' page.
