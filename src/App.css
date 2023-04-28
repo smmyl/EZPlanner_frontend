@@ -25,3 +25,13 @@ body {
   margin-top: 20px;
   border-radius: 15px;
 }
+#notepad {
+  background-image: url('http://i.stack.imgur.com/ynxjD.png');
+  background-size: auto;
+  border: 2px solid rgba(0, 0, 0, 0.551);
+  box-shadow: 5px 5px;
+}
+#notepadcont {
+  display: flex;
+  justify-content: right;
+}
