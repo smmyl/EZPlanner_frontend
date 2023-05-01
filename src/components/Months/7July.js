@@ -1,6 +1,6 @@
 import {useState} from 'react'
 
-const April = (props) => {
+const July = (props) => {
     const [view, setView] = useState(false)
 
     const viewToggle = () => {
@@ -9,7 +9,7 @@ const April = (props) => {
 
     return (
         <>
-            <div class='grid flex-grow w-full h-auto grid-cols-7 grid-rows-6 gap-px pt-px mt-1 bg-gray-200'>
+            <div class='grid flex-grow w-full h-auto grid-cols-7 grid-rows-5 gap-px pt-px mt-1 bg-gray-200'>
                 <div class='relative flex flex-col bg-gray group'>
                     <span class='mx-2 my-1 text-xs font-bold'>26</span>
                     <div class='flex flex-col px-1 py-1 overflow-auto'/>
@@ -40,13 +40,6 @@ const April = (props) => {
                 </div>
                 <div class='relative flex flex-col bg-gray group'>
                     <span class='mx-2 my-1 text-xs font-bold'>30</span>
-                    <div class='flex flex-col px-1 py-1 overflow-auto'/>
-                    <button class='absolute bottom-0 right-0 flex items-center justify-center hidden w-4 h-4 mb-2 mr-2 text-white bg-gray-400 rounded group-hover:flex hover:bg-gray-500'>
-                        <img src='https://img.icons8.com/?size=512&id=30M9wv1iFkcH&format=png'/>
-                    </button>
-                </div>
-                <div class='relative flex flex-col bg-gray group'>
-                    <span class='mx-2 my-1 text-xs font-bold'>31</span>
                     <div class='flex flex-col px-1 py-1 overflow-auto'/>
                     <button class='absolute bottom-0 right-0 flex items-center justify-center hidden w-4 h-4 mb-2 mr-2 text-white bg-gray-400 rounded group-hover:flex hover:bg-gray-500'>
                         <img src='https://img.icons8.com/?size=512&id=30M9wv1iFkcH&format=png'/>
@@ -263,48 +256,6 @@ const April = (props) => {
                         <img src='https://img.icons8.com/?size=512&id=30M9wv1iFkcH&format=png'/>
                     </button>
                 </div>
-                <div class='relative flex flex-col bg-gray group'>
-                    <span class='mx-2 my-1 text-xs font-bold'>1</span>
-                    <div class='flex flex-col px-1 py-1 overflow-auto'/>
-                    <button class='absolute bottom-0 right-0 flex items-center justify-center hidden w-4 h-4 mb-2 mr-2 text-white bg-gray-400 rounded group-hover:flex hover:bg-gray-500'>
-                        <img src='https://img.icons8.com/?size=512&id=30M9wv1iFkcH&format=png'/>
-                    </button>
-                </div>
-                <div class='relative flex flex-col bg-gray group'>
-                    <span class='mx-2 my-1 text-xs font-bold'>2</span>
-                    <div class='flex flex-col px-1 py-1 overflow-auto'/>
-                    <button class='absolute bottom-0 right-0 flex items-center justify-center hidden w-4 h-4 mb-2 mr-2 text-white bg-gray-400 rounded group-hover:flex hover:bg-gray-500'>
-                        <img src='https://img.icons8.com/?size=512&id=30M9wv1iFkcH&format=png'/>
-                    </button>
-                </div>
-                <div class='relative flex flex-col bg-gray group'>
-                    <span class='mx-2 my-1 text-xs font-bold'>3</span>
-                    <div class='flex flex-col px-1 py-1 overflow-auto'/>
-                    <button class='absolute bottom-0 right-0 flex items-center justify-center hidden w-4 h-4 mb-2 mr-2 text-white bg-gray-400 rounded group-hover:flex hover:bg-gray-500'>
-                        <img src='https://img.icons8.com/?size=512&id=30M9wv1iFkcH&format=png'/>
-                    </button>
-                </div>
-                <div class='relative flex flex-col bg-gray group'>
-                    <span class='mx-2 my-1 text-xs font-bold'>4</span>
-                    <div class='flex flex-col px-1 py-1 overflow-auto'/>
-                    <button class='absolute bottom-0 right-0 flex items-center justify-center hidden w-4 h-4 mb-2 mr-2 text-white bg-gray-400 rounded group-hover:flex hover:bg-gray-500'>
-                        <img src='https://img.icons8.com/?size=512&id=30M9wv1iFkcH&format=png'/>
-                    </button>
-                </div>
-                <div class='relative flex flex-col bg-gray group'>
-                    <span class='mx-2 my-1 text-xs font-bold'>5</span>
-                    <div class='flex flex-col px-1 py-1 overflow-auto'/>
-                    <button class='absolute bottom-0 right-0 flex items-center justify-center hidden w-4 h-4 mb-2 mr-2 text-white bg-gray-400 rounded group-hover:flex hover:bg-gray-500'>
-                        <img src='https://img.icons8.com/?size=512&id=30M9wv1iFkcH&format=png'/>
-                    </button>
-                </div>
-                <div class='relative flex flex-col bg-gray group'>
-                    <span class='mx-2 my-1 text-xs font-bold'>6</span>
-                    <div class='flex flex-col px-1 py-1 overflow-auto'/>
-                    <button class='absolute bottom-0 right-0 flex items-center justify-center hidden w-4 h-4 mb-2 mr-2 text-white bg-gray-400 rounded group-hover:flex hover:bg-gray-500'>
-                        <img src='https://img.icons8.com/?size=512&id=30M9wv1iFkcH&format=png'/>
-                    </button>
-                </div>
             </div>
             {view ?
             (
@@ -342,4 +293,4 @@ const April = (props) => {
     )
 }
 
-export default April;
+export default July;

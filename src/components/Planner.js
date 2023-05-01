@@ -1,7 +1,13 @@
 import {useState} from 'react'
 import April from './Months/4April'
 import May from './Months/5May'
+import June from './Months/6June'
+import July from './Months/7July'
+import August from './Months/8August'
+import September from './Months/9September'
+import October from './Months/10October'
 import moment from 'moment'
+
 const Planner = (props) => {
     const months = ['March 2023', 'April 2023', 'May 2023', 'June 2023', 'July 2023', 'August 2023', 'September 2023', 'October 2023', 'November 2023', 'December 2023', 'January 2024', 'February 2024', ]
     const date = moment().format('MMMM YYYY')
@@ -51,6 +57,16 @@ const Planner = (props) => {
                             <April/>
                         :'May 2023' == currentMonth ?
                             <May/>
+                        :'June 2023' == currentMonth ?
+                            <June/>
+                        :'July 2023' == currentMonth ?
+                        <July/>
+                        :'August 2023' == currentMonth ?
+                        <August/>
+                        :'September 2023' == currentMonth ?
+                        <September/>
+                        :'October 2023' == currentMonth ?
+                        <October/>
                         :
                         <>
                         </>

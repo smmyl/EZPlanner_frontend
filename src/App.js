@@ -27,7 +27,7 @@ const App = () => {
   const date2 = moment().format().slice(0, 10)
 
   const getWeather = () => {
-    axios.get(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${profileInfo[0].zipcode}/${date1}?key=URZ2JCLABATC4FSQCFUQGGN4U`).then((response) => {
+    axios.get(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/02128/${date1}?key=URZ2JCLABATC4FSQCFUQGGN4U`).then((response) => {
       console.log(response)
       setWeather(response.data.currentConditions)
     }).catch((error) => {
