@@ -1,29 +1,70 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Dosis&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap');
 
 body {
-  background: ghostwhite;
+  background: rgb(226, 226, 236);
   font-family: 'Bebas Neue', cursive;
 }
-.prof-pic {
-  width: 25%;
+#prof-pic {
+  width: 250px;
 }
-#conditions {
+#homecont {
+  background-color: rgb(255, 255, 255);
+}
+/* ==weather background images */
+#clear-day {
   background-image: url('https://media.istockphoto.com/id/824800468/photo/sun-on-blue-sky-with-clouds.jpg?b=1&s=170667a&w=0&k=20&c=rVSwIECCenLv_NYV76uQQdhc1VwOSkPqoIjHuqNu_sw=');
   background-size: cover;
 }
+#snow {
+  background-image: url('https://wallpapercave.com/wp/wp4895759.jpg');
+  background-size:cover;
+}
+#rain {
+  background-image: url('https://c4.wallpaperflare.com/wallpaper/291/32/969/rain-beautiful-desktop-wallpaper-preview.jpg');
+  background-size:cover;
+}
+#fog {
+  background-image: url('https://e0.pxfuel.com/wallpapers/484/102/desktop-wallpaper-foggy-forest-top-foggy-forest-background-foggy-aesthetic.jpg');
+  background-size:cover;
+}
+#wind {
+  background-image: url('https://wallpapercave.com/wp/wp5641765.jpg');
+  background-size:cover;
+}
+#cloudy {
+  background-image: url('https://preppywallpapers.com/wp-content/uploads/2018/12/Cloudy-iPhone-Wallpaper-Collection.jpg');
+  background-size:cover;
+}
+
 .conditionbg1 {
-  font-size: 1.5em;
-  background-color: rgba(255, 255, 255, 0.464);
-  width: 170px;
+  font-size: 1.2em;
+  background-color: rgba(255, 255, 255, 0.658);
+  width: 40%;
   padding: 10px;
   border-radius: 15px;
+  font-family: 'Libre Baskerville', serif;
+  font-weight: bolder;
+  margin: auto;
 }
 .conditionbg2 {
   font-size: 1em;
-  background-color: rgba(255, 255, 255, 0.464);
+  background-color: rgba(255, 255, 255, 0.658);
   padding: 10px;
   margin-top: 20px;
   border-radius: 15px;
+  width: 80%;
+  margin: 30px auto 0 auto;
+  text-align: left;
+  padding-left: 15%;
+}
+.weatherspan {
+  float: right;
+  padding-right: 20%;
+}
+#quote{
+  font-family: 'PT Sans', sans-serif;
 }
 #notepad {
   background-image: url('http://i.stack.imgur.com/ynxjD.png');

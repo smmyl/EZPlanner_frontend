@@ -3,29 +3,30 @@ import moment from 'moment'
 
 const Home = (props) => {
     const date = moment()
-
     return (
         <>
-            <div class='container mx-auto'>
-                <div class='px-10 py-10 mt-5 rounded-3xl shadow-2xl'id='conditions'>
-                    <div class='conditionbg1'>
-                        <h1 class='text-5xl'>{date.format('dddd')}</h1>
+            <div class='container mx-auto flex flex-col my-5 px-10 rounded-xl' id='homecont'>
+                <div class='px-10 py-10 mt-5 rounded-3xl shadow-2xl flex flex-col justify-center' id={props.weather.icon}>
+                    <div class='conditionbg1 text-center'>
+                        <h1 class='text-4xl'>{date.format('dddd')}</h1>
                         <h1>{date.format('MMM Do YY')}</h1>
                     </div>
-                    <div class='conditionbg2'>
-                        <p>Current: {props.weather.temp}°F</p>
-                        <p>Feels Like: {props.weather.feelslike}°F</p>
-                        <p>Humidity: {props.weather.humidity}°F</p>
-                        <p>WindSpeed: {props.weather.windspeed} mph</p>
-                        <p>UV index: {props.weather.uvindex}</p>
-                        <p>Conditions: {props.weather.icon}</p>
-                        <p>Last Updated: {date.format('h:mm:ss a')}</p>
+                    <div class='conditionbg2 text-center'>
+                        <p>Current: <span class='weatherspan'>{props.weather.temp}°F</span></p>
+                        <p>Feels Like: <span class='weatherspan'>{props.weather.feelslike}°F</span></p>
+                        <p>Humidity: <span class='weatherspan'>{props.weather.humidity}°F</span></p>
+                        <p>WindSpeed: <span class='weatherspan'>{props.weather.windspeed} mph</span></p>
+                        <p>UV index: <span class='weatherspan'>{props.weather.uvindex}</span></p>
+                        <p>Conditions: <span class='weatherspan'>{props.weather.icon}</span></p>
+                        <p>Last Updated: <span class='weatherspan'>{date.format('h:mm:ss a')}</span></p>
                     </div>
                 </div>
                 <br/>
                 <div class='flex flex-row'>
                     <div class='flex flex-col px-5 py-5'>
-                        <p class='text-xl'>Quote of the Day: '{props.quote.quote}' -{props.quote.author} ({props.quote.category})</p>
+                        <div class="bg-blue-100 border-t border-b border-blue-500 text-blue-700 px-4 py-3 shadow-2xl" id='quote'role="alert">
+                            <p class='text-lg'>'{props.quote.quote}' - {props.quote.author} ({props.quote.category})</p>
+                        </div>
                         <ul class='flex pt-10'>
                             <li class='mr-6'>
                                 <a href='https://gmail.com' target='_blank'>
