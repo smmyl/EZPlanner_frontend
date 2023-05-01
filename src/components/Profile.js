@@ -3,6 +3,8 @@ import {useState} from 'react'
 const Profile = (props) => {
     const [quoteCategories, setQuoteCategories] = useState(false)
     const [icons, setIcons] = useState(false)
+    const [edit, setEdit] = useState(true)
+    const [profileInfo, setProfileInfo] = useState({...props.profileInfo})
 
     const quoteCategoriesToggle = () => {
         setQuoteCategories(!quoteCategories)
@@ -12,110 +14,65 @@ const Profile = (props) => {
         setQuoteCategories(false)
         setIcons(!icons)
     }
+    const editToggle = () => {
+        setEdit(!edit)
+    }
+    const handleChange = (event) => {
+        setProfileInfo({...profileInfo[0], [event.target.name]: event.target.value})
+    }
+    const handleSubmit = (event) => {
+        event.preventDefault()
+        props.handleUpdateProfileInfo(profileInfo)
+    }
 
     return (
         <>
-            <div class='relative py-32 bg-blueGray-200 '>
+            <div class='relative py-32 bg-blueGray-200'>
                 <div class='container mx-auto px-4'>
                     <div class='relative flex flex-col min-w-0 bg-white w-full mb-6 shadow-xl rounded-lg'>
                         <div class='px-6'>
                             <div class='flex flex-wrap justify-center'>
                                 <div class='w-full lg:w-3/12 px-4 lg:order-2 flex justify-center'>
                                     <div class='relative'>
-                                        <img id='prof-pic'src='https://i.imgur.com/ch3OAl8.jpg' class='shadow-xl rounded-full h-auto align-middle border-none mx-auto -mt-20'/>
+                                        <img id='prof-pic'src='https://i.imgur.com/CbL4ECc.jpg' class='shadow-xl rounded-full h-auto align-middle border-none mx-auto -mt-20'/>
                                     </div>
                                 </div>
                             </div>
+                        {edit ? (
+                        <>
                         <div class='text-center mt-12'>
                             <h3 class='text-4xl font-semibold leading-normal mb-2 text-blueGray-700 mb-2'>
-                            Sammy Liao
+                            {props.profileInfo[0].name}
                             </h3>
-                            <div class='text-sm leading-normal mt-0 mb-2 text-blueGray-400 font-bold uppercase'>
-                                <i class='fas fa-map-marker-alt mr-2 text-lg text-blueGray-400'></i>
-                            MA, 02118
+                            <div class='text-lg leading-normal mt-0 mb-2 text-blueGray-400 font-bold uppercase'>
+                                <p class='fas fa-map-marker-alt mr-2 text-lg text-blueGray-400'></p>
+                            {props.profileInfo[0].zipcode}
                             </div>
                         </div>
-                            <div class='mt-10 py-10 border-t border-blueGray-200 text-center'>
-                                <div class='flex flex-wrap justify-center'>
-                                    <div class='w-full lg:w-9/12 px-4'>
-                                        <p class='mb-4 text-lg leading-relaxed text-blueGray-700'>
-                                        Options
-                                        </p>
-                                    </div>
+                        <div class='mt-10 py-10 border-t border-blueGray-200 text-center'>
+                            <div class='flex flex-wrap justify-center'>
+                                <div class='w-full lg:w-9/12 px-4'>
+                                    <p class='mb-4 text-lg leading-relaxed text-blueGray-700 cursor-pointer' onClick={editToggle}>
+                                    Options / Edit
+                                    </p>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-                    <br/>
-                    <form>
+                        </>
+                        ) :
+                        (
+                        <>
+                        <div class='justify-center container flex mt-20'>
+                        <form id='editform' onSubmit={handleSubmit}>
                         <label for='name'>Name:</label>
-                        <input class='h-7 rounded-md' type='text' name='name'/>
-                        <br/>
-                        <br/>
-                        <label for='state'>State:</label>
-                        <select class='h-7 rounded-md'>
-                            <option class='text-center'>-----------------</option>
-                            <option value='AL'>Alabama</option>
-                            <option value='AK'>Alaska</option>
-                            <option value='AZ'>Arizona</option>
-                            <option value='AR'>Arkansas</option>
-                            <option value='CA'>California</option>
-                            <option value='CO'>Colorado</option>
-                            <option value='CT'>Connecticut</option>
-                            <option value='DE'>Delaware</option>
-                            <option value='DC'>District Of Columbia</option>
-                            <option value='FL'>Florida</option>
-                            <option value='GA'>Georgia</option>
-                            <option value='HI'>Hawaii</option>
-                            <option value='ID'>Idaho</option>
-                            <option value='IL'>Illinois</option>
-                            <option value='IN'>Indiana</option>
-                            <option value='IA'>Iowa</option>
-                            <option value='KS'>Kansas</option>
-                            <option value='KY'>Kentucky</option>
-                            <option value='LA'>Louisiana</option>
-                            <option value='ME'>Maine</option>
-                            <option value='MD'>Maryland</option>
-                            <option value='MA'>Massachusetts</option>
-                            <option value='MI'>Michigan</option>
-                            <option value='MN'>Minnesota</option>
-                            <option value='MS'>Mississippi</option>
-                            <option value='MO'>Missouri</option>
-                            <option value='MT'>Montana</option>
-                            <option value='NE'>Nebraska</option>
-                            <option value='NV'>Nevada</option>
-                            <option value='NH'>New Hampshire</option>
-                            <option value='NJ'>New Jersey</option>
-                            <option value='NM'>New Mexico</option>
-                            <option value='NY'>New York</option>
-                            <option value='NC'>North Carolina</option>
-                            <option value='ND'>North Dakota</option>
-                            <option value='OH'>Ohio</option>
-                            <option value='OK'>Oklahoma</option>
-                            <option value='OR'>Oregon</option>
-                            <option value='PA'>Pennsylvania</option>
-                            <option value='RI'>Rhode Island</option>
-                            <option value='SC'>South Carolina</option>
-                            <option value='SD'>South Dakota</option>
-                            <option value='TN'>Tennessee</option>
-                            <option value='TX'>Texas</option>
-                            <option value='UT'>Utah</option>
-                            <option value='VT'>Vermont</option>
-                            <option value='VA'>Virginia</option>
-                            <option value='WA'>Washington</option>
-                            <option value='WV'>West Virginia</option>
-                            <option value='WI'>Wisconsin</option>
-                            <option value='WY'>Wyoming</option>
-                        </select>
+                        <input class='h-7 rounded-md' type='text' name='name' onChange={handleChange} value={props.profileInfo[0].name}/>
                         <br/>
                         <br/>
                         <label for='zipcode'>Zip Code:</label>
-                        <input class='h-7 rounded-md' type='text' name='zipcode'/>
+                        <input class='h-7 rounded-md' type='text' name='zipcode' onChange={handleChange} value={props.profileInfo[0].zipcode}/>
                         <br/>
                         <br/>
-                        <p>Options:</p>
+                        <p>Options: </p>
                         <br/>
                         <label for='quote'>Show Quotes: </label>
                         <input type='checkbox' name='quote' checked/>
@@ -234,16 +191,17 @@ const Profile = (props) => {
                             <label for='success'>success: </label>
                             <input type='checkbox' name='success' checked/>
                             <br/>
-                            <button onClick={quoteCategoriesToggle}>Hide</button>
+                            <button class='bg-blue-500 hover:bg-blue-700 text-white font-bold my-2 mr-4 px-2 rounded-full' onClick={quoteCategoriesToggle}>Hide</button>
                             </>
                         )
                             :
                         (
                             <>
-                            <button onClick={quoteCategoriesToggle}>Categories</button>
+                            <button class='bg-blue-500 hover:bg-blue-700 text-white font-bold my-2 mr-4 px-2 rounded-full' onClick={quoteCategoriesToggle}>Categories</button>
                             </>
                         )
                         }
+                        <br/>
                         <br/>
                         <label for='icons'>Show Icons: </label>
                         <input type='checkbox' name='icons' checked/>
@@ -251,29 +209,85 @@ const Profile = (props) => {
                         {icons ?
                         (
                             <>
+                            <br/>
                             <label for='gmail'>Gmail: </label>
                             <input type='checkbox' name='gmail' checked/>
                             <br/>
                             <label for='gmail-link'>link: </label>
-                            <input type='url' name='gmail-link'/>
+                            <input class='h-7 rounded-md' type='url' name='gmail-link'/>
+                            <br/>
                             <br/>
                             <label for='github'>Github: </label>
                             <input type='checkbox' name='github' checked/>
                             <br/>
                             <label for='github-link'>link: </label>
-                            <input type='url' name='github-link'/>
+                            <input class='h-7 rounded-md' type='url' name='github-link'/>
                             <br/>
-                            <button onClick={iconsToggle}>Hide</button>
+                            <br/>
+                            <label for='facebook'>Facebook: </label>
+                            <input type='checkbox' name='facebook' checked/>
+                            <br/>
+                            <label for='facebook-link'>link: </label>
+                            <input class='h-7 rounded-md' type='url' name='facebook-link'/>
+                            <br/>
+                            <br/>
+                            <label for='linkedin'>Linkedin: </label>
+                            <input type='checkbox' name='linkedin' checked/>
+                            <br/>
+                            <label for='linkedin-link'>link: </label>
+                            <input class='h-7 rounded-md' type='url' name='linkedin-link'/>
+                            <br/>
+                            <br/>
+                            <label for='instagram'>Instagram: </label>
+                            <input type='checkbox' name='instagram' checked/>
+                            <br/>
+                            <label for='instagram-link'>link: </label>
+                            <input class='h-7 rounded-md' type='url' name='instagram-link'/>
+                            <br/>
+                            <br/>
+                            <label for='twitter'>Twitter: </label>
+                            <input type='checkbox' name='twitter' checked/>
+                            <br/>
+                            <label for='twitter-link'>link: </label>
+                            <input class='h-7 rounded-md' type='url' name='twitter-link'/>
+                            <br/>
+                            <br/>
+                            <label for='imgur'>Imgur: </label>
+                            <input type='checkbox' name='imgur' checked/>
+                            <br/>
+                            <label for='imgur-link'>link: </label>
+                            <input class='h-7 rounded-md' type='url' name='imgur-link'/>
+                            <br/>
+                            <br/>
+                            <button class='bg-blue-500 hover:bg-blue-700 text-white font-bold my-2 mr-4 px-2 rounded-full' onClick={iconsToggle}>Hide</button>
                             </>
                         )
                             :
                         (
                             <>
-                            <button onClick={iconsToggle}>Categories</button>
+                            <button class='bg-blue-500 hover:bg-blue-700 text-white font-bold my-2 mr-4 px-2 rounded-full' onClick={iconsToggle}>Categories</button>
                             </>
                         )
                         }
-                    </form>
+                        </form>
+                        </div>
+                        <div class='mt-10 py-10 border-t border-blueGray-200 text-center'>
+                            <div class='flex flex-wrap justify-center'>
+                                <div class='w-full lg:w-9/12 px-4 flex justify-evenly'>
+                                    <p class='mb-4 text-lg leading-relaxed text-blueGray-700 cursor-pointer' onClick={editToggle}>
+                                    Go Back
+                                    </p>
+                                    <button type='submit' form='editform' value='Update'>Save Changes</button>
+                                </div>
+                            </div>
+                        </div>
+                        </>)
+                        }
+                        </div>
+                    </div>
+                </div>
+            </div>
+                    <br/>
         </>
     )
 }

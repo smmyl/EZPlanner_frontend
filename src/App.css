@@ -37,14 +37,26 @@ body {
   background-image: url('https://preppywallpapers.com/wp-content/uploads/2018/12/Cloudy-iPhone-Wallpaper-Collection.jpg');
   background-size:cover;
 }
+#partly-cloudy-day {
+  background-image: url('https://preppywallpapers.com/wp-content/uploads/2018/12/Cloudy-iPhone-Wallpaper-Collection.jpg');
+  background-size:cover;
+}
+#partly-cloudy-night {
+  background-image: url('https://t3.ftcdn.net/jpg/03/80/42/46/360_F_380424606_6qJIhGTtcS3j8wZ6QfTdKeEuCLwoC2A9.jpg');
+  background-size:cover;
+}
+#clear-night {
+  background-image: url('https://c4.wallpaperflare.com/wallpaper/777/422/528/night-sky-wallpaper-preview.jpg');
+  background-size:cover;
+}
+
 
 .conditionbg1 {
-  font-size: 1.2em;
+  font-size: 1.5em;
   background-color: rgba(255, 255, 255, 0.658);
   width: 40%;
   padding: 10px;
   border-radius: 15px;
-  font-family: 'Libre Baskerville', serif;
   font-weight: bolder;
   margin: auto;
 }
@@ -75,4 +87,24 @@ body {
 #notepadcont {
   display: flex;
   justify-content: right;
+}
+.loginspan {
+  float: right;
+}
+#loginform {
+  width: 500px;
+  justify-content: center;
+  margin: auto;
+}
+#loginbuttons button:hover {
+  color: rgb(142, 142, 142);
+  background-color:#0ff;
+  box-shadow: 0 0 40px 20px #0ff;
+}
+#notecont {
+  background-image: url('http://i.stack.imgur.com/ynxjD.png');
+  height: 700px;
+  width: 100%;
+  padding-left: 110px;
+  padding-top: 7px;
 }

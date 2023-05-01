@@ -3,37 +3,48 @@ import {useState} from 'react'
 const Login = (props) => {
     const [signIn, setSignIn] = useState(false)
     const [signUp, setSignUp] = useState(true)
+    const [signInText, setSignInText] = useState('')
+    const [signUpText, setSignUpText] = useState('text-4xl')
 
     const signInToggle = () => {
-        setSignIn(!signIn)
+        setSignIn(true)
         setSignUp(false)
+        setSignInText('text-4xl')
+        setSignUpText('')
     }
     const signUpToggle = () => {
         setSignIn(false)
-        setSignUp(!signUp)
+        setSignUp(true)
+        setSignInText('')
+        setSignUpText('text-4xl')
     }
-
     return (
         <>
-            <div class='container mx-auto'>
-                <button onClick={signUpToggle}>Sign Up</button>
+            <div class='relative flex flex-col min-w-0 bg-white w-full my-20 mx-auto container p-20 shadow-xl rounded-lg border-8 border-black'>
+                <div class='flex justify-evenly' id='loginbuttons'>
+                    <button class={signUpText} onClick={signUpToggle}>Sign Up</button>
+                    <button class={signInText} onClick={signInToggle}>Sign In</button>
+                </div>
                 <br/>
-                <button onClick={signInToggle}>Sign In</button>
+                <div class='flex flex-col ml-10 p-10' id='loginform'>
                 {signUp ?
                 (
                     <>
-                    <h1>Sign Up</h1>
+
                     <form>
                         <label for='username'>Username:</label>
-                        <input type='text' name='username'/>
+                        <input class='loginspan h-7 rounded-md' type='text' name='username'/>
+                        <br/>
                         <br/>
                         <label for='password'>Password:</label>
-                        <input type='text' name='password'/>
+                        <input class='loginspan h-7 rounded-md' type='text' name='password'/>
+                        <br/>
                         <br/>
                         <label for='password2'>Reenter Password:</label>
-                        <input type='text' name='password2'/>
+                        <input class='loginspan h-7 rounded-md' type='text' name='password2'/>
                         <br/>
-                        <input type='submit' value='Create Account'/>
+                        <br/>
+                        <input class='loginspan cursor-pointer' type='submit' value='Create Account'/>
                     </form>
                     </>
                 )
@@ -46,15 +57,16 @@ const Login = (props) => {
                 {signIn ?
                 (
                     <>
-                    <h1>Sign In</h1>
                     <form>
                         <label for='username'>Username:</label>
-                        <input type='text' name='username'/>
+                        <input class='loginspan h-7 rounded-md' type='text' name='username'/>
+                        <br/>
                         <br/>
                         <label for='password'>Password:</label>
-                        <input type='text' name='password'/>
+                        <input class='loginspan h-7 rounded-md' type='text' name='password'/>
                         <br/>
-                        <input type='submit' value='Login'/>
+                        <br/>
+                        <input class='loginspan cursor-pointer' type='submit' value='Login'/>
                     </form>
                     </>
                 )
@@ -64,6 +76,7 @@ const Login = (props) => {
                     </>
                 )
                 }
+                </div>
             </div>
         </>
     )

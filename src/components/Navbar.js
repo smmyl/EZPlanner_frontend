@@ -31,7 +31,7 @@ const Navbar = (props) => {
                             <div id="dropdownNavbar" class="hidden bg-white text-base z-10 list-none divide-y divide-gray-100 rounded shadow my-4 w-44">
                                 <ul class="py-1" aria-labelledby="dropdownLargeButton">
                                 <li>
-                                    <a class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">Notes</a>
+                                    <a class="text-sm cursor-pointer hover:bg-gray-100 text-gray-700 block px-4 py-2" onClick={props.notesToggle}>Notes</a>
                                 </li>
                                 </ul>
                             </div>
